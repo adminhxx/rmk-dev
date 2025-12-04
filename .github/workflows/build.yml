@@ -40,6 +40,7 @@ jobs:
           - stm32h7
           - esp32c3_ble
           - esp32c6_ble
+          - esp32c6_kbd
         example_type:
           - use_rust
           - use_config
@@ -57,7 +58,7 @@ jobs:
         working-directory: ./examples/${{ matrix.example_type }}/${{ matrix.example }}
         run: cargo build --release
       - name: Build example uf2
-        if: ${{ matrix.example != 'esp32c3_ble' && matrix.example != 'esp32c6_ble' }}
+        if: ${{ matrix.example != 'esp32c3_ble' && matrix.example != 'esp32c6_ble' && matrix.example != 'esp32c6_kbd' }} 
         working-directory: ./examples/${{ matrix.example_type }}/${{ matrix.example }}
         run: cargo make uf2 --release
   build-esp32s3:

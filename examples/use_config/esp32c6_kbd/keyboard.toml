@@ -1,0 +1,62 @@
+[keyboard]
+name = "RMkC6"
+product_name = "RMkC6"
+vendor_id = 0x4c4b
+product_id = 0x4643
+manufacturer = "xusir"
+chip = "esp32c6"
+usb_enable = false
+
+[matrix]
+# Row and col pins are mandatory
+# row_pins = ["GPIO6", "GPIO7", "GPIO20", "GPIO21"]
+# col_pins = ["GPIO3", "GPIO4", "GPIO5"]
+matrix_type = "direct_pin"
+direct_pins = [
+    ["GPIO0"],
+    ["GPIO1"],
+    ["GPIO20"]
+]
+
+direct_pin_low_active = true
+# RMK uses col2row as the default matrix diode direction, if you want to use a row2col matrix, add `row2col = true`
+# row2col = true
+
+[layout]
+rows = 3
+cols = 1
+layers = 3
+keymap = [
+    [
+        ["Space"],
+        ["Up"],
+        ["Down"]
+    ],
+    [
+        ["A"],
+        ["B"],
+        ["C"]
+    ],
+    [
+        ["A"],
+        ["B"],
+        ["C"]
+    ]
+]
+
+[light]
+# All light pins are high-active by default, uncomment if you want it to be low-active
+# capslock.pin = "PB2"
+# capslock.low_active = true
+# scrolllock.pin = "PA3"
+# scrolllock.low_active = true
+# Just ignore if no light pin is used for it
+# numslock.pin = "PA5"
+# numslock.low_active = true
+
+[storage]
+# Storage feature is enabled by default
+# enabled = false
+
+[ble]
+enabled = true
