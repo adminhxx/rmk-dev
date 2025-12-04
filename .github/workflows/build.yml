@@ -38,8 +38,8 @@ jobs:
           # - stm32f1
           # - stm32f4
           # - stm32h7
-          - esp32c3_ble
-          - esp32c6_ble
+          # - esp32c3_ble
+          # - esp32c6_ble
           - esp32c6_kbd
         example_type:
           - use_config
@@ -56,6 +56,14 @@ jobs:
       - name: Build example
         working-directory: ./examples/${{ matrix.example_type }}/${{ matrix.example }}
         run: cargo build --release
+      # - name: convert firmware to bin
+      #   working-directory: ./examples/${{ matrix.example_type }}/${{ matrix.example }}
+      #   run: espflash save-image --chip esp32c6 target/riscv32imac-unknown-none-elf/release/${{ matrix.example }} ./rmk.bin
+      - name: Upload firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.example }}-${{ matrix.example_type }}
+          path: ./examples/${{ matrix.example_type }}/${{ matrix.example }}/*
       - name: Build example uf2
         if: ${{ matrix.example != 'esp32c3_ble' && matrix.example != 'esp32c6_ble' && matrix.example != 'esp32c6_kbd' }} 
         working-directory: ./examples/${{ matrix.example_type }}/${{ matrix.example }}
