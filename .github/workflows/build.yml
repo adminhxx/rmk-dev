@@ -63,7 +63,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.example }}-${{ matrix.example_type }}
-          path: ./examples/${{ matrix.example_type }}/${{ matrix.example }}/release/*
+          path: ./examples/${{ matrix.example_type }}/${{ matrix.example }}/build/*
       - name: Build example uf2
         if: ${{ matrix.example != 'esp32c3_ble' && matrix.example != 'esp32c6_ble' && matrix.example != 'esp32c6_kbd' }} 
         working-directory: ./examples/${{ matrix.example_type }}/${{ matrix.example }}
