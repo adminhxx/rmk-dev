@@ -10,12 +10,12 @@ pub const fn get_default_keymap() -> [[[KeyAction; COL]; ROW]; NUM_LAYER] {
         layer!([
             [k!(Kp7)],
             [k!(Kp4)],
-            [k!(Kp1)],
+            [k!(Kp1)]
         ]),
         layer!([
             [k!(Kp9)],
             [k!(Kp6)],
-            [k!(Kp3)],
+            [k!(Kp3)]
         ]),
     ]
 }
