@@ -1,0 +1,17 @@
+{
+    "name": "RMkC6",
+    "vendorId": "0x4C4B",
+    "productId": "0x4643",
+    "lighting": "none",
+    "matrix": {
+        "rows": 3,
+        "cols": 1
+    },
+    "layouts": {
+        "keymap": [
+            ["0,0"],
+            ["1,0"],
+            ["2,0"]
+        ]
+    }
+}

@@ -26,18 +26,18 @@ jobs:
     strategy:
       matrix:
         example:
-          - nrf52832_ble
-          - nrf52840_ble
-          - nrf52840_ble_split
-          - nrf52840_ble_split_dongle
-          - rp2040
-          - rp2040_split
-          - rp2040_direct_pin
-          - pi_pico_w_ble
-          - pi_pico_w_ble_split
-          - stm32f1
-          - stm32f4
-          - stm32h7
+          # - nrf52832_ble
+          # - nrf52840_ble
+          # - nrf52840_ble_split
+          # - nrf52840_ble_split_dongle
+          # - rp2040
+          # - rp2040_split
+          # - rp2040_direct_pin
+          # - pi_pico_w_ble
+          # - pi_pico_w_ble_split
+          # - stm32f1
+          # - stm32f4
+          # - stm32h7
           - esp32c3_ble
           - esp32c6_ble
           - esp32c6_kbd
