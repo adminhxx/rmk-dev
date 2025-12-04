@@ -42,7 +42,6 @@ jobs:
           - esp32c6_ble
           - esp32c6_kbd
         example_type:
-          - use_rust
           - use_config
     steps:
       - uses: actions/setup-python@v5
