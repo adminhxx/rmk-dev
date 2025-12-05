@@ -60,7 +60,7 @@ jobs:
         run: cargo build --release
       - name: convert firmware to bin
         working-directory: ./examples/${{ matrix.example_type }}/${{ matrix.example }}
-        run: espflash save-image --chip esp32c6 --flash-size 4mb --merge target/riscv32imac-unknown-none-elf/release/rmk-esp32c6 ./rmk-esp32c6.bin
+        run: espflash save-image --chip esp32c6 --flash-size 4mb --merge ./rmk-esp32c6.bin target/riscv32imac-unknown-none-elf/release/rmk-esp32c6
       - name: Upload firmware
         uses: actions/upload-artifact@v4
         with:
