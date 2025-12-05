@@ -60,7 +60,7 @@ jobs:
         run: cargo build --release
       - name: convert firmware to bin
         working-directory: ./examples/${{ matrix.example_type }}/${{ matrix.example }}
-        run: espflash save-image --chip esp32c6 target/riscv32imac-unknown-none-elf/release/rmk-esp32c6 ./rmk-esp32c6.bin
+        run: espflash save-image --chip esp32c6 --flash-size 4MB target/riscv32imac-unknown-none-elf/release/rmk-esp32c6 ./rmk-esp32c6.bin
       - name: Upload firmware
         uses: actions/upload-artifact@v4
         with:
@@ -68,7 +68,7 @@ jobs:
           path: ./examples/${{ matrix.example_type }}/${{ matrix.example }}/*.bin
       - name: espsegs
         working-directory: ./examples/${{ matrix.example_type }}/${{ matrix.example }}
-        run: cargo install --git https://github.com/bjoernQ/espsegs && espsegs target/riscv32imac-unknown-none-elf/release/rmk-esp32c6 --chip esp32c6 -s 4MB && cargo run --release  
+        run: cargo install --git https://github.com/bjoernQ/espsegs && espsegs target/riscv32imac-unknown-none-elf/release/rmk-esp32c6 --chip esp32c6 -s 4MB 
       - name: Build example uf2
         if: ${{ matrix.example != 'esp32c3_ble' && matrix.example != 'esp32c6_ble' && matrix.example != 'esp32c6_kbd' }} 
         working-directory: ./examples/${{ matrix.example_type }}/${{ matrix.example }}
